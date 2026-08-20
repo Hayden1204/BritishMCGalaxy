@@ -24,13 +24,13 @@ namespace MCGalaxy.Commands.Building
 {
     public sealed class CmdCenter : Command2 
     {
-        public override string name { get { return "Center"; } }
-        public override string shortcut { get { return "Centre"; } }
+        public override string name { get { return "Centre"; } }
+        public override string shortcut { get { return "Center"; } }
         public override string type { get { return CommandTypes.Building; } }
         
         public override void Use(Player p, string message, CommandData data) {
             p.Message("Place or break two blocks to determine the edges.");
-            p.MakeSelection(2, "Selecting region for &SCenter", null, DoCentre);
+            p.MakeSelection(2, "Selecting region for &SCentre", null, DoCentre);
         }
         
         bool DoCentre(Player p, Vec3S32[] m, object state, BlockID block) {
@@ -59,8 +59,8 @@ namespace MCGalaxy.Commands.Building
         }
         
         public override void Help(Player p) {
-            p.Message("&T/Center");
-            p.Message("&HPlaces gold blocks at the center of your selection");
+            p.Message("&T/Centre");
+            p.Message("&HPlaces gold blocks at the centre of your selection");
         }
     }
 }
