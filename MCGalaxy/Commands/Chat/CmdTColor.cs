@@ -19,20 +19,21 @@ namespace MCGalaxy.Commands.Chatting
 {
     public class CmdTColor : EntityPropertyCmd 
     {
-        public override string name { get { return "TColor"; } }
+        public override string name { get { return "TColour"; } }
         public override string type { get { return CommandTypes.Chat; } }
         public override LevelPermission defaultRank { get { return LevelPermission.Admin; } }
         public override CommandPerm[] ExtraPerms {
-            get { return new[] { new CommandPerm(LevelPermission.Operator, "can change the title color of others") }; }
+            get { return new[] { new CommandPerm(LevelPermission.Operator, "can change the title colour of others") }; }
         }
         public override CommandAlias[] Aliases {
             get { return new[] {
-                new CommandAlias("XTColor"),
+                new CommandAlias("TColor"),
+                new CommandAlias("OTColour", OTHER_FLAG)
                 new CommandAlias("OTColor", OTHER_FLAG)
             }; }
         }
         public override void Use(Player p, string message, CommandData data) { 
-            UsePlayer(p, data, message, "title color"); 
+            UsePlayer(p, data, message, "title colour"); 
         }
         
         protected override void SetPlayerData(Player p, string target, string colName) {
@@ -40,12 +41,12 @@ namespace MCGalaxy.Commands.Chatting
         }
 
         public override void Help(Player p) {
-            p.Message("&T/TColor <color>");
-            p.Message("&H Sets your title color");
-            p.Message("&T/OTColor [player] <color>");
-            p.Message("&H Sets the title color of other player");
-            p.Message("&H  Leave color blank to reset it.");
-            p.Message("&H  To see a list of all colors, use &T/Help colors.");
+            p.Message("&T/TColour <colour>");
+            p.Message("&H Sets your title colour");
+            p.Message("&T/OTColour [player] <colour>");
+            p.Message("&H Sets the title colour of other player");
+            p.Message("&H  Leave colour blank to reset it.");
+            p.Message("&H  To see a list of all colours, use &T/Help colours.");
         }
     }
 }
