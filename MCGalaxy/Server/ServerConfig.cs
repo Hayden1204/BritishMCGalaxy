@@ -25,8 +25,8 @@ namespace MCGalaxy
 {
     public sealed class ServerConfig : EnvConfig 
     {
-        [ConfigString("server-name", "Server", "[MCGalaxy] Default", false, BASE_NAME_CHARS + CP437_NAME_CHARS)]
-        public string Name = "[MCGalaxy] Default";
+        [ConfigString("server-name", "Server", "[British MCGalaxy] Default", false, BASE_NAME_CHARS + CP437_NAME_CHARS)]
+        public string Name = "[British MCGalaxy] Default";
         [ConfigString("motd", "Server", "Welcome", false)]
         public string MOTD = "Welcome!";
         [ConfigInt("max-players", "Server", 16, 1, Server.MAX_PLAYERS)]
@@ -257,8 +257,8 @@ namespace MCGalaxy
         public string DefaultShutdownMessage = "Server shutdown. Rejoin in 10 seconds.";
         [ConfigString("custom-promote-message", "Messages", "&6Congratulations for working hard and getting &2PROMOTED!")]
         public string DefaultPromoteMessage = "&6Congratulations for working hard and getting &2PROMOTED!";
-        [ConfigString("custom-demote-message", "Messages", "&4DEMOTED! &6We're sorry for your loss. Good luck on your future endeavors! &1:'(")]
-        public string DefaultDemoteMessage = "&4DEMOTED! &6We're sorry for your loss. Good luck on your future endeavors! &1:'(";
+        [ConfigString("custom-demote-message", "Messages", "&4DEMOTED! &6We're sorry for your loss. Good luck on your future endeavours! &1:'(")]
+        public string DefaultDemoteMessage = "&4DEMOTED! &6We're sorry for your loss. Good luck on your future endeavours! &1:'(";
         [ConfigString("custom-restart-message", "Messages", "Server restarted. Sign in again and rejoin.")]
         public string DefaultRestartMessage = "Server restarted. Sign in again and rejoin.";
         [ConfigString("custom-whitelist-message", "Messages", "This is a private server!")]
