@@ -65,7 +65,7 @@ namespace MCGalaxy.Commands.Chatting
             p.Message("&T/Colour bot [bot] <colour>");
             p.Message("&H Sets the name colour of that bot.");
             p.Message("&H  Leave <colour> blank to reset it.");
-            p.Message("&HTo see a list of all colors, use /Help colours.");
+            p.Message("&HTo see a list of all colours, use /Help colours.");
         }
     }
 }
