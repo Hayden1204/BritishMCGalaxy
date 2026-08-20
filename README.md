@@ -1,8 +1,8 @@
-MCGalaxy is a fully featured and customisable **ClassiCube Server Software** based on MCForge/MCLawl.
+British MCGalaxy is a fully featured and customisable **ClassiCube Server Software** based on MCForge/MCLawl.
 
 **Setup**
 -----------------
-Download the latest MCGalaxy release [from here](https://www.classicube.net/mcg/download/)
+Download the latest British MCGalaxy release [from here](https://www.classicube.net/mcg/download/)
 * Windows: You need to install .NET framework 4.0. Windows 8/10/11 already have this included.
 * macOS:   You need to install the [Mono framework](https://www.mono-project.com).
 * Linux:   You need to install the [Mono framework](https://www.mono-project.com). (or just `apt install mono-complete` if on Ubuntu)
@@ -62,7 +62,7 @@ Enter the server URL into the web browser
 
 
 ### Show on classicube.net server list
-Click **Settings** in the MCGalaxy window, then tick the **Public** checkbox. Then click **Save**.
+Click **Settings** in the British MCGalaxy window, then tick the **Public** checkbox. Then click **Save**.
 
 This makes your server appear in the server list on classicube.net and in the ClassiCube client.
 
@@ -86,11 +86,11 @@ Compiling - .NET 6 / .NET 7 / .NET 8
 
 Copyright/License
 -----------------
-See LICENSE for MCGalaxy license, and license.txt for code used from other software.
+See LICENSE for British MCGalaxy license, and license.txt for code used from other software.
 
 Docker support
 -----------------
-Some **unofficial** dockerfiles for running MCGalaxy in Docker:
+Some **unofficial** dockerfiles for running British MCGalaxy in Docker:
 * [using Mono](https://github.com/ClassiCube/MCGalaxy/pull/577/files)
 * [using .NET core](https://github.com/ClassiCube/MCGalaxy/pull/629/files)
 
