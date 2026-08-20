@@ -22,29 +22,29 @@ namespace MCGalaxy.Commands.Chatting
 {    
     public class CmdColor : EntityPropertyCmd 
     {
-        public override string name { get { return "Color"; } }
+        public override string name { get { return "Colour"; } }
         public override string type { get { return CommandTypes.Chat; } }
         public override LevelPermission defaultRank { get { return LevelPermission.Operator; } }
         public override CommandPerm[] ExtraPerms {
-            get { return new[] { new CommandPerm(LevelPermission.Operator, "can change the color of others"),
-                    new CommandPerm(LevelPermission.Operator, "can change the color of bots") }; }
+            get { return new[] { new CommandPerm(LevelPermission.Operator, "can change the colour of others"),
+                    new CommandPerm(LevelPermission.Operator, "can change the colour of bots") }; }
         }
         public override CommandAlias[] Aliases {
             get { return new[] {
-                new CommandAlias("Colour"),
-                new CommandAlias("XColor"),
+                new CommandAlias("Color"),
+                new CommandAlias("OColour", OTHER_FLAG)
                 new CommandAlias("OColor", OTHER_FLAG)
             }; }
         }        
         public override void Use(Player p, string message, CommandData data) { 
-            UseBotOrPlayer(p, data, message, "color"); 
+            UseBotOrPlayer(p, data, message, "colour"); 
         }
 
         protected override void SetBotData(Player p, PlayerBot bot, string colName) {
             string color = colName.Length == 0 ? "&1" : Matcher.FindColor(p, colName);
             if (color == null) return;
             
-            p.Message("You changed the color of bot " + bot.ColoredName + 
+            p.Message("You changed the colour of bot " + bot.ColoredName + 
                       " &Sto " + color + Colors.Name(color));
             bot.color = color;
             
@@ -58,14 +58,14 @@ namespace MCGalaxy.Commands.Chatting
         }
         
         public override void Help(Player p) {
-            p.Message("&T/Color <color>");
-            p.Message("&H Sets your nick color");
-            p.Message("&T/OColor [player] <color>");
+            p.Message("&T/Colour <color>");
+            p.Message("&H Sets your nick colour");
+            p.Message("&T/OColour [player] <colour>");
             p.Message("&H Sets the nick color of other player");
-            p.Message("&T/Color bot [bot] <color>");
-            p.Message("&H Sets the name color of that bot.");
-            p.Message("&H  Leave <color> blank to reset it.");
-            p.Message("&HTo see a list of all colors, use /Help colors.");
+            p.Message("&T/Colour bot [bot] <colour>");
+            p.Message("&H Sets the name colour of that bot.");
+            p.Message("&H  Leave <colour> blank to reset it.");
+            p.Message("&HTo see a list of all colors, use /Help colours.");
         }
     }
 }
