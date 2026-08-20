@@ -59,12 +59,12 @@ namespace MCGalaxy.Commands.Info
             p.Message("&HCommand Categories:");
             p.Message("  &T{0}", CmdCommands.GetCategories());
             p.Message("&HOther Categories:");
-            p.Message("  &TRanks Colors Emotes Shortcuts Commands");
+            p.Message("  &TRanks Colours Emotes Shortcuts Commands");
             p.Message("&HTo view help for a category, type &T/Help CategoryName");
             p.Message("&HTo see detailed help for a command, type &T/Help CommandName");
             p.Message("&HTo see your stats, type &T/Info");
             p.Message("&HTo see loaded maps, type &T/Maps");
-            p.Message("&HTo view your personal world options, use &T/Realm");
+            p.Message("&HTo view your personal map options, use &T/Realm");
             p.Message("&HTo join a map, type &T/Goto WorldName");
             p.Message("&HTo send private messages, type &T@PlayerName Message");
         }
@@ -78,8 +78,8 @@ namespace MCGalaxy.Commands.Info
         }
         
         static void PrintColors(Player p) {
-            p.Message("&fTo use a color, put a '%' and then put the color code.");
-            p.Message("Colors Available:");
+            p.Message("&fTo use a colour, put a '%' and then put the colour code.");
+            p.Message("Colours Available:");
             
             p.Message("0 - &0{0} &S| 1 - &1{1} &S| 2 - &2{2} &S| 3 - &3{3}",
                       Colors.Name('0'), Colors.Name('1'), Colors.Name('2'), Colors.Name('3'));
