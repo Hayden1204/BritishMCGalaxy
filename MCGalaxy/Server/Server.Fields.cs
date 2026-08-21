@@ -43,7 +43,7 @@ namespace MCGalaxy
         public const string InternalVersion = "1.9.5.3";
         public static string Version { get { return InternalVersion; } }
         
-        public static string SoftwareName = "MCGalaxy";
+        public static string SoftwareName = "British MCGalaxy";
         static string fullName;
         public static string SoftwareNameVersioned {
             // By default, if SoftwareName gets externally changed, that is reflected in SoftwareNameVersioned too
