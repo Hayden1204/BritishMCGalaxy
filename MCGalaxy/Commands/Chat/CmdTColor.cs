@@ -28,7 +28,7 @@ namespace MCGalaxy.Commands.Chatting
         public override CommandAlias[] Aliases {
             get { return new[] {
                 new CommandAlias("TColor"),
-                new CommandAlias("OTColour", OTHER_FLAG)
+                new CommandAlias("OTColour", OTHER_FLAG),
                 new CommandAlias("OTColor", OTHER_FLAG)
             }; }
         }
