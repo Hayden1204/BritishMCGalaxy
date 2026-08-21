@@ -78,7 +78,7 @@ namespace MCGalaxy {
                     case '5': return new ColorDesc('5', "Purple");
                     case '6': return new ColorDesc('6', "Gold");
                     case '7': return new ColorDesc('7', "Silver");
-                    case '8': return new ColorDesc('8', "Gray");
+                    case '8': return new ColorDesc('8', "Grey");
                     case '9': return new ColorDesc('9', "Blue");
                     case 'a': return new ColorDesc('a', "Lime");
                     case 'b': return new ColorDesc('b', "Aqua");
