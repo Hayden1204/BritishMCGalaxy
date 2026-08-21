@@ -22,7 +22,7 @@ namespace MCGalaxy.Commands.CPE
 {    
     public sealed class CmdCustomColors : Command2 
     {        
-        public override string name { get { return "CustomColors"; } }
+        public override string name { get { return "CustomColours"; } }
         public override string shortcut { get { return "ccols"; } }
         public override string type { get { return CommandTypes.Chat; } }
         public override LevelPermission defaultRank { get { return LevelPermission.Admin; } }
@@ -52,11 +52,11 @@ namespace MCGalaxy.Commands.CPE
             if (code >= 'A' && code <= 'F') code += ' ';
             
             if (code == ' ' || code == '\0' || code == '\u00a0' || code == '%' || code == '&') {
-                p.Message("&WColor code cannot be a space, percentage, or ampersand.");
+                p.Message("&WColour code cannot be a space, percentage, or ampersand.");
                 return;
             }            
             if (Colors.IsSystem(code)) {
-                p.Message("&WCannot change system defined color codes using %T/CustomColors");
+                p.Message("&WCannot change system defined colour codes using %T/CustomColours");
                 return;
             }
             
@@ -67,7 +67,7 @@ namespace MCGalaxy.Commands.CPE
             
             col.Code = code; col.Fallback = fallback; col.Name = args[2];
             Colors.Update(col);
-            p.Message("Successfully added '{0}' color", code);
+            p.Message("Successfully added '{0}' colour", code);
         }
         
         void RemoveHandler(Player p, string[] args) {
@@ -77,7 +77,7 @@ namespace MCGalaxy.Commands.CPE
             if (code == '\0') return;
             
             Colors.Update(Colors.DefaultCol(code));
-            p.Message("Successfully removed '{0}' color", code);
+            p.Message("Successfully removed '{0}' colour", code);
         }
         
         static void ListHandler(Player p, string cmd, string modifier) {
@@ -88,7 +88,7 @@ namespace MCGalaxy.Commands.CPE
             }
             
             Paginator.Output(p, validColors, PrintColor, 
-                             cmd, "Colors", modifier);
+                             cmd, "Colours", modifier);
         }
         
         // Not very elegant, because we don't want the % to be escaped like everywhere else
@@ -121,7 +121,7 @@ namespace MCGalaxy.Commands.CPE
                 ColorDesc rgb = default(ColorDesc);
                 if (!CommandParser.GetHex(p, args[3], ref rgb)) return;
                 
-                p.Message("Set hex color of {0} to {1}", col.Name, Utils.Hex(rgb.R, rgb.G, rgb.B));
+                p.Message("Set hex colour of {0} to {1}", col.Name, Utils.Hex(rgb.R, rgb.G, rgb.B));
                 col.R = rgb.R; col.G = rgb.G; col.B = rgb.B;
             } else {
                 Help(p); return;
@@ -133,7 +133,7 @@ namespace MCGalaxy.Commands.CPE
         
         static bool CheckName(Player p, string arg) {
             if (Colors.Parse(arg).Length > 0) {
-                p.Message("There is already an existing color named \"{0}\".", arg);
+                p.Message("There is already an existing colour named \"{0}\".", arg);
                 return false;
             }
             return true;
@@ -147,8 +147,8 @@ namespace MCGalaxy.Commands.CPE
                 char code = arg[0];
                 if (Colors.IsDefined(code)) return code;
                 
-                p.Message("There is no color with the code {0}.", code);
-                p.Message("Use &T/CustomColors list &Sto see a list of colors.");
+                p.Message("There is no colour with the code {0}.", code);
+                p.Message("Use &T/CustomColours list &Sto see a list of colours.");
             }
             return '\0';
         }
@@ -156,7 +156,7 @@ namespace MCGalaxy.Commands.CPE
         static bool CheckFallback(Player p, string arg, char code, out char fallback) {
             fallback = arg[0];
             if (!Colors.IsStandard(fallback)) {
-                p.Message("{0} must be a standard color code.", fallback); return false;
+                p.Message("{0} must be a standard colour code.", fallback); return false;
             }
             // Can't change fallback of standard colour code
             if (Colors.IsStandard(code)) fallback = code;
@@ -166,12 +166,12 @@ namespace MCGalaxy.Commands.CPE
         }
         
         public override void Help(Player p) {
-            p.Message("&T/CustomColors add [code] [name] [fallback] [hex]");
+            p.Message("&T/CustomColours add [code] [name] [fallback] [hex]");
             p.Message("&H  code is a single character.");
-            p.Message("&H  fallback is the color code shown to non-supporting clients.");
-            p.Message("&T/CustomColors remove [code] &H- Removes that custom color.");
-            p.Message("&T/CustomColors list [offset] &H- lists all custom colors.");
-            p.Message("&T/CustomColors edit [code] [name/fallback/hex] [value]");
+            p.Message("&H  fallback is the colour code shown to non-supporting clients.");
+            p.Message("&T/CustomColours remove [code] &H- Removes that custom colour.");
+            p.Message("&T/CustomColours list [offset] &H- lists all custom colours.");
+            p.Message("&T/CustomColours edit [code] [name/fallback/hex] [value]");
         }
     }
 }
