@@ -32,7 +32,7 @@ namespace MCGalaxy.Commands.Chatting
         public override CommandAlias[] Aliases {
             get { return new[] {
                 new CommandAlias("Color"),
-                new CommandAlias("OColour", OTHER_FLAG)
+                new CommandAlias("OColour", OTHER_FLAG),
                 new CommandAlias("OColor", OTHER_FLAG)
             }; }
         }        
