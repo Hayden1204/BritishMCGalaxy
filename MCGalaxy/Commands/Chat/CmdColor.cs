@@ -58,10 +58,10 @@ namespace MCGalaxy.Commands.Chatting
         }
         
         public override void Help(Player p) {
-            p.Message("&T/Colour <color>");
+            p.Message("&T/Colour <colour>");
             p.Message("&H Sets your nick colour");
             p.Message("&T/OColour [player] <colour>");
-            p.Message("&H Sets the nick color of other player");
+            p.Message("&H Sets the nick colour of other player");
             p.Message("&T/Colour bot [bot] <colour>");
             p.Message("&H Sets the name colour of that bot.");
             p.Message("&H  Leave <colour> blank to reset it.");
