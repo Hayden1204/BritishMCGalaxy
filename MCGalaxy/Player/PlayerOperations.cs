@@ -213,12 +213,12 @@ namespace MCGalaxy
             if (cancel) return false;
 
             if (colorName.Length == 0) {
-                MessageAction(p, target, who, "λACTOR &Sremoved λTARGET title color");
+                MessageAction(p, target, who, "λACTOR &Sremoved λTARGET title colour");
             } else  {
                 color = Matcher.FindColor(p, colorName);
                 if (color == null) return false;
                 
-                MessageAction(p, target, who, "λACTOR &Schanged λTARGET title color to " + color + Colors.Name(color));
+                MessageAction(p, target, who, "λACTOR &Schanged λTARGET title colour to " + color + Colors.Name(color));
             }
             
             if (who != null) who.titlecolor = color;
@@ -240,13 +240,13 @@ namespace MCGalaxy
                 color = Group.GroupIn(target).Color;
                 
                 PlayerDB.Update(target, PlayerData.ColumnColor, "");
-                MessageAction(p, target, who, "λACTOR &Sremoved λTARGET color");
+                MessageAction(p, target, who, "λACTOR &Sremoved λTARGET colour");
             } else {
                 color = Matcher.FindColor(p, colorName);
                 if (color == null) return false;
                 
                 PlayerDB.Update(target, PlayerData.ColumnColor, color);
-                MessageAction(p, target, who, "λACTOR &Schanged λTARGET color to " + color + Colors.Name(color));
+                MessageAction(p, target, who, "λACTOR &Schanged λTARGET colour to " + color + Colors.Name(color));
             }
             if (who != null) who.UpdateColor(color);
             return true;
