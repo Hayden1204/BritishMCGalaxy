@@ -31,7 +31,6 @@ namespace MCGalaxy.Commands.Chatting
         }
         public override CommandAlias[] Aliases {
             get { return new[] {
-                new CommandAlias("XNick"),
                 new CommandAlias("ONick", OTHER_FLAG)
             }; }
         }
